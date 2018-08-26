@@ -1,0 +1,64 @@
+<html>
+<head>
+<script language="javascript"></script>
+<script>
+function valid()
+{
+	var a=document.getElementById("name").value
+	var b=document.getElementById("numb").value
+	var c=document.getElementById("cvv").value
+	var r=/\d/
+	if(r.test(a))
+	{
+		alert("cardname should not contain digits")
+	}
+	if(b.length<16||b.length>16)
+	{
+		alert("Incorrect cardnumber")
+	}
+	if(c.length>3)
+	{
+		alert("check your cvv-it contains 3 letters")
+	}
+	prompt("enter otp","123456");
+	localStorage.setItem("myname",a)
+	localStorage.setItem("num",b)
+	localStorage.setItem("cv",c)
+	document.getElementById("name").value=""
+	document.getElementById("numb").value=""
+	document.getElementById("cvv").value=""
+	
+}
+</script>
+<style>
+p.ex
+{
+color:white
+}
+</style>
+<body>
+<body background="photo1.jpg">
+<fieldset>
+  <legend style="color:cyan";>PAYMENT</legend>
+<form>
+<img src="1.jpg" width="100" height="100">
+<br>
+ <p class="ex"> Name on the card:<br></p>
+  <input type="text" id="name" name="id" >
+  <br>
+ <p class="ex">  Card number:<br></p>
+  <input type="text" id="numb" >
+  <br>
+  <form action="/action_page.php">
+ <p class="ex">  Expiration date:<br></p>
+  <input type="date" id="exp"><br>
+  
+ <p class="ex">  Cvv number:<br></p>
+  <input type="number" id="cvv" >
+  <br>
+</form>
+  <input type="submit" value="pay" onClick="valid()">
+  </fieldset>
+ </form>
+</body>
+</html>
